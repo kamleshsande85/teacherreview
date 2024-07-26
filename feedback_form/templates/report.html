@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Feedback Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesChart.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Teacher Feedback Report</h1>
+    </header>
+    <div class="chart-container">
+        {% for teacher, chart_url in chart_paths.items() %}
+        <div class="chart">
+            <h2>{{ teacher }}</h2>
+            <img src="{{ chart_url }}" alt="Feedback Chart for {{ teacher }}">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

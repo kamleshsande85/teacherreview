@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Course Feedback Form</h1>
+    <form method="post">
+        <div>
+            <label for="course_program">Course/Program:</label>
+            <input type="text" id="course_program" name="course_program" required>
+        </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" required>
+        </div>
+        <div>
+            <label>1. Depth of the course content including project work, if any:</label><br>
+            <input type="radio" id="depth_very_good" name="depth" value="Very good">
+            <label for="depth_very_good">Very good</label><br>
+            <input type="radio" id="depth_good" name="depth" value="Good">
+            <label for="depth_good">Good</label><br>
+            <input type="radio" id="depth_satisfactory" name="depth" value="Satisfactory">
+            <label for="depth_satisfactory">Satisfactory</label><br>
+            <input type="radio" id="depth_unsatisfactory" name="depth" value="Unsatisfactory">
+            <label for="depth_unsatisfactory">Unsatisfactory</label><br>
+        </div>
+        <div>
+            <label>2. Extent of coverage of course:</label><br>
+            <input type="radio" id="coverage_very_good" name="coverage" value="Very good">
+            <label for="coverage_very_good">Very good</label><br>
+            <input type="radio" id="coverage_good" name="coverage" value="Good">
+            <label for="coverage_good">Good</label><br>
+            <input type="radio" id="coverage_satisfactory" name="coverage" value="Satisfactory">
+            <label for="coverage_satisfactory">Satisfactory</label><br>
+            <input type="radio" id="coverage_unsatisfactory" name="coverage" value="Unsatisfactory">
+            <label for="coverage_unsatisfactory">Unsatisfactory</label><br>
+        </div>
+        <!-- Repeat for other questions similarly -->
+        <div>
+            <label>9. Overall rating:</label><br>
+            <input type="radio" id="overall_very_good" name="overall_rating" value="Very good">
+            <label for="overall_very_good">Very good</label><br>
+            <input type="radio" id="overall_good" name="overall_rating" value="Good">
+            <label for="overall_good">Good</label><br>
+            <input type="radio" id="overall_satisfactory" name="overall_rating" value="Satisfactory">
+            <label for="overall_satisfactory">Satisfactory</label><br>
+            <input type="radio" id="overall_unsatisfactory" name="overall_rating" value="Unsatisfactory">
+            <label for="overall_unsatisfactory">Unsatisfactory</label><br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

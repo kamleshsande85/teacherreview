@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleTeccherDiss.css') }}">
+</head>
+<body>
+    <h1>Teacher Feedback</h1>
+    {% for teacher, feedbacks in feedback_data.items() %}
+        <h2>{{ teacher }}</h2>
+        <table>
+            <caption>Feedback for {{ teacher }}</caption>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Knowledge Base</th>
+                    <th>Communication Skills</th>
+                    <th>Sincerity</th>
+                    <th>Interest Generated</th>
+                    <th>Integration Material</th>
+                    <th>Integrate Content</th>
+                    <th>Accessibility</th>
+                    <th>Ability Design</th>
+                    <th>Overall Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feedback in feedbacks %}
+                    <tr>
+                        <td>{{ feedback.username }}</td>
+                        <td>{{ feedback.knowledge_base }}</td>
+                        <td>{{ feedback.communication_skills }}</td>
+                        <td>{{ feedback.sincerity }}</td>
+                        <td>{{ feedback.interest_generated }}</td>
+                        <td>{{ feedback.integration_material }}</td>
+                        <td>{{ feedback.integrate_content }}</td>
+                        <td>{{ feedback.accessibility }}</td>
+                        <td>{{ feedback.ability_design }}</td>
+                        <td>{{ feedback.overall_rating }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleTeccherDiss.css') }}">
+</head>
+<body>
+    <h1>Teacher Feedback</h1>
+    {% for teacher, users_feedbacks in feedback_data.items() %}
+        <h2>{{ teacher }}</h2>
+        {% for user, feedbacks in users_feedbacks.items() %}
+            <h3>User: {{ user }}</h3>
+            <table>
+                <caption>Feedback for {{ teacher }} by {{ user }}</caption>
+                <thead>
+                    <tr>
+                        <th>Knowledge Base</th>
+                        <th>Communication Skills</th>
+                        <th>Sincerity</th>
+                        <th>Interest Generated</th>
+                        <th>Integration Material</th>
+                        <th>Integrate Content</th>
+                        <th>Accessibility</th>
+                        <th>Ability Design</th>
+                        <th>Overall Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for feedback in feedbacks %}
+                        <tr>
+                            <td>{{ feedback.knowledge_base }}</td>
+                            <td>{{ feedback.communication_skills }}</td>
+                            <td>{{ feedback.sincerity }}</td>
+                            <td>{{ feedback.interest_generated }}</td>
+                            <td>{{ feedback.integration_material }}</td>
+                            <td>{{ feedback.integrate_content }}</td>
+                            <td>{{ feedback.accessibility }}</td>
+                            <td>{{ feedback.ability_design }}</td>
+                            <td>{{ feedback.overall_rating }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
