@@ -20,6 +20,10 @@ To install and run the project locally, follow these steps:
    ```bash
    cd teacherreview
    ```
+3. Navigate to the directory:
+   ```bash
+   cd feedback_form
+   ```
 3. Install dependencies:
    ```bash
    pip install -r requirements.txt
@@ -28,6 +32,7 @@ To install and run the project locally, follow these steps:
     ```bash
    python app.py
    ```
+    
 
 ## Usage
 Once the development server is running, open your browser and navigate to `http://localhost:3000`. You can create an account, log in, and start submitting and viewing teacher reviews.
