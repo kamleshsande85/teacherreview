@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Set a secret key for session management
 
 # Initialize the database
+session = {'username' : 'username'}
 
 
 def init_db():
@@ -207,18 +208,22 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-
+        session['username'] = username 
+        # Store in session
         with sqlite3.connect('feedback.db') as conn:
             c = conn.cursor()
             c.execute('SELECT * FROM users WHERE username = ?', (username,))
             user = c.fetchone()
-
-            if user and check_password_hash(user[3], password):
-                session['user_id'] = user[0]
-                session['username'] = user[1]
-                return redirect('/feedback_form')
-            else:
-                flash('Login failed. Check your username and password and try again.')
+            
+            if username=="Admin" and password =="8520":
+                return render_template("admin.html")
+            else:                
+                if user and check_password_hash(user[3], password):
+                    session['user_id'] = user[0]
+                    session['username'] = user[1]
+                    return redirect('/feedback_form')
+                else:
+                    flash('Login failed. Check your username and password and try again.')
 
     return render_template('login.html')
 
@@ -232,7 +237,6 @@ from flask import Flask, render_template, url_for, send_from_directory
 import sqlite3
 import matplotlib.pyplot as plt
 import os
-
 
 
 # Define the path to the charts directory
@@ -317,6 +321,34 @@ def report():
 def chart(filename):
     return send_from_directory(CHARTS_DIR, filename)
 
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    username = session['username']
+    with sqlite3.connect('feedback.db') as conn:
+        c = conn.cursor()
+        c.execute('SELECT * FROM users where username = ?',(username,))
+        # c.execute('SELECT * FROM users where username = ?',("fg",))
+        existing_feedback = c.fetchall()
+
+    return render_template('profile.html', existing_feedback=existing_feedback)
+
+
+@app.route('/admin')
+def admin():
+    return render_template("admin.html")
+
+@app.route('/adminProfile')
+def adminProfile():
+    username = session['username']
+    with sqlite3.connect('feedback.db') as conn:
+        c = conn.cursor()
+        c.execute('SELECT * FROM users where username = ?',(username,))
+        # c.execute('SELECT * FROM users where username = ?',("fg",))
+        existing_feedback = c.fetchall()
+        
+    return render_template('adminProfile.html', existing_feedback=existing_feedback)
+  
 
 
 

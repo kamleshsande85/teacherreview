@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>Register</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styleRegister.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}"> -->
 </head>
 <body>
-    <h1>Register</h1>
+    <h1>Register</h1> <br>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
             {% for message in messages %}
-                <li>{{ message }}</li>
+                 <script>
+                    alert("${{ message }}")
+                 </script>
             {% endfor %}
             </ul>
         {% endif %}

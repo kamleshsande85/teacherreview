@@ -1,0 +1,46 @@
+.admin {
+    width: 80%;
+    display: block;
+    margin: auto;
+    background-color: white;
+}
+
+
+.admin h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.table-admin table{
+    width: 50%;
+    margin-left: 25%;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.table-admin th ,.table-admin td{
+    width: 20%;
+    padding: 5%;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 25px;
+   
+    
+}
+
+.table-admin td{
+    background: #dbdbdb;
+    color: white;
+    /* width: 20%; */
+}
+.table-admin th{
+    background: #000000;
+    color: white;
+    /* width: 20%; */
+}
+
+
+.space{
+    width: 20%;
+}

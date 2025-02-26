@@ -1,0 +1,24 @@
+.profile{
+    width: 60%;
+    display: block;
+    margin: auto;
+    background-color: white;
+    border: 2px solid black;
+    /* border-radius: 1%; */
+}
+
+.image{
+    width: 250px;  /* Apni requirement ke according size adjust karein */
+    height: 250px;
+    /* border-radius: 50%;  Ye image ko circular banayega */
+    object-fit: cover; /* Image ko perfect fit karega */
+    border: 3px solid #000; /* Optional: border dena chahein to */
+    display: block; /* Ensure image is treated as a block element */
+    margin: auto; /* Center align */
+}
+
+.bio{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    /* text-align: center; */
+}

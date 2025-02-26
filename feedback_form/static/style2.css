@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px;
+    background-color: #053048;
+}
+
+
+.navbar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: #D9BB41; */
+    background-color: #000000;
+    padding: 3px;
+    margin-bottom: 20px;
+    position: fixed;
+
+}
+
+.navbar ul,
+.navbar li:first-child {
+    /* display: inline; */
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    gap: 50px;
+    color: rgb(255, 255, 255);
+    padding-right: 5%;
+    margin-right: auto;
+
+}
+
+.info {
+    /* background-color: #66C3F4; */
+    color: white;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.info h1 {
+    color: white;
+    font-size: 35px;
+    padding-left: 2%;
+}
+
+.info h2 {
+    color: white;
+    font-size: 30px;
+    padding-left: 2%;
+}
+
+.from form {
+    margin: 20px;
+    margin-left: 20%;
+    /* right: 50%; */
+    width: 60%;
+
+    /* justify-content: center; */
+    /* align-items: center;  */
+
+}
+
+.chart-container {
+    margin: 20px;
+    margin-left: 14%;
+    /* right: 50%; */
+    /* width: 60%; */
+}
+
+.chart-container h2,
+.chart-container h1 {
+    /* text-align: center; */
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-right: 14%;
+}

@@ -8,7 +8,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     margin-top: 20px;
 }
 
@@ -19,6 +19,8 @@ table {
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    border-collapse: collapse;
 }
 
 thead {
@@ -29,10 +31,14 @@ thead {
 thead th {
     padding: 12px;
     text-align: left;
+    border: 2px solid black;
+   
 }
 
 tbody tr {
     border-bottom: 1px solid #ddd;
+    border: 2px solid black;
+    
 }
 
 tbody tr:nth-child(even) {
@@ -41,6 +47,8 @@ tbody tr:nth-child(even) {
 
 tbody td {
     padding: 12px;
+    border: 2px solid black;
+   
 }
 
 tbody tr:hover {

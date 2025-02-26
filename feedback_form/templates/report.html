@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Feedback Report</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesChart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 </head>
+
 <body>
-    <header>
-        <h1>Teacher Feedback Report</h1>
-    </header>
+    <nav class="navbar">
+        <ul>
+            <!-- <li><a href="/feedback_form">Home</a></li> -->
+            <li><a href="/adminProfile">Profile</a></li>
+            <!-- <li><a href="/report">Report Graphicaly</a></li> -->
+            <li><a href="/display_feedback2">Teacher tabular</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </nav>
+
     <div class="chart-container">
+        <h1>Teacher Feedback Report</h1>
         {% for teacher, chart_url in chart_paths.items() %}
         <div class="chart">
             <h2>{{ teacher }}</h2>
@@ -18,5 +30,8 @@
         </div>
         {% endfor %}
     </div>
+
+
 </body>
+
 </html>

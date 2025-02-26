@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='admin.css')}}">
+    <title>admin</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <!-- <li><a href="/feedback_form">Home</a></li> -->
+            <li><a href="/adminProfile">Profile</a></li>
+            <!-- <li><a href="/report">Report Graphicaly</a></li> -->
+            <!-- <li><a href="/display_feedback2">Teacher tabular</a></li> -->
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="admin">
+        <h1>Wellcome Admin</h1> <br>
+        <div class="table-admin">
+            <table>
+                <thead>
+                    <th colspan="3">Action</th>
+                </thead>
+                <tbody>
+                    <td> <a href="/report"><b>Teacher Report Graphicaly</b></a></td>
+                    <td><a href="/display_feedback2"><b>Teacher Report tabular</b></a></td>
+                    <td><a href="/display_users"><b>Display users</b></a></td>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="space">
+            <p>-</p>
+        </div>
+    </div>
+</body>
+
+</html>
