@@ -21,10 +21,13 @@ To install and run the project locally, follow these steps:
    cd teacherreview
    ```
 3. Install dependencies:
-   
-
+   ```bash
+   pip install -r requirements.txt
+   ```
 5. Start the development server:
+    ```bash
    python app.py
+   ```
 
 ## Usage
 Once the development server is running, open your browser and navigate to `http://localhost:3000`. You can create an account, log in, and start submitting and viewing teacher reviews.
